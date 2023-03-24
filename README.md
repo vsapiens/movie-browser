@@ -1,25 +1,60 @@
+# Movie API & React App
 
-The Movie API will be running on `http://localhost:3000`. You can now send requests to the API using tools like Postman or CURL, or you can integrate it with your frontend application.
+This project consists of a simple Node.js Express API for retrieving movie information and a React app for displaying the movie data.
+
+## Components
+
+- **Movie API**: A Node.js Express API that handles CRUD operations for movies.
+- **React App**: A React application that communicates with the Movie API to fetch and display movie data.
+
+## Getting Started
+
+Follow the instructions below to set up and run the Movie API and React App on your local machine.
+
+### Prerequisites
+
+- Node.js (version 14.x or higher)
+- npm (version 6.x or higher)
+
+### Setting up the Movie API
+
+1. Navigate to the Movie API directory:
+
+``cd server``
+
+2. Install the required dependencies:
+
+``npm install``
+
+3. Start the development server:
+
+``npm run start``
+
+The Movie API will be running on `http://localhost:3000`.
+
+### Setting up the React App
+
+1. Navigate to the React App directory:
+
+``cd client``
+
+2. Install the required dependencies:
+
+``npm install``
+
+3. Start the development server:
+
+``npm run start``
+
+The React App will be running on `http://localhost:3000`.
 
 ## API Endpoints
 
-### Get all movies
+Refer to the [Movie API README](movie-api/README.md) for a detailed description of the available API endpoints.
 
-- Request: `GET /movies?page={page}&pageSize={pageSize}`
-- Description: Fetches a list of movies with pagination. If `page` and `pageSize` query parameters are not provided, default values of 1 for `page` and 10 for `pageSize` will be used.
-- Example: `GET http://localhost:3000/movies?page=1&pageSize=10`
+## React App
 
-### Get a specific movie by ID
-
-- Request: `GET /movies/:id`
-- Description: Fetches the details of a specific movie by its ID.
-- Example: `GET http://localhost:3000/movies/1`
-
-## Built With
-
-- [Express](https://expressjs.com/) - The web framework used
-- [Helmet](https://helmetjs.github.io/) - Security middleware for setting HTTP headers
-- [Compression](https://github.com/expressjs/compression) - Middleware for compressing response bodies
+The React App fetches and displays movie data from the Movie API. You can extend its functionality by adding more components, connecting to additional API endpoints, or adding more features like search, filtering, and user authentication.
 
 ## License
 

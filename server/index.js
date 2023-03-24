@@ -1,15 +1,27 @@
+const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const helmet = require('helmet');
 const compression = require('compression');
 
+
 const app = express();
+
+// Serve the static files from the React app
+app.use(express.static(path.join(__dirname, '../client/movie-browser/build')));
+
+// Handle any requests that don't match the ones above
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/movie-browser/build', 'index.html'));
+});
+
 app.use(cors());
 app.use(helmet());
 app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 const movies = [
   {
