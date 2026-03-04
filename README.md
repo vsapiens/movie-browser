@@ -1,61 +1,60 @@
-# Movie API & React App
+# Movie Browser
 
-This project consists of a simple Node.js Express API for retrieving movie information and a React app for displaying the movie data.
+A full-stack movie browser app with an Express API backend and a React frontend powered by Vite.
 
-## Components
+## Prerequisites
 
-- **Movie API**: A Node.js Express API that handles CRUD operations for movies.
-- **React App**: A React application that communicates with the Movie API to fetch and display movie data.
+- Node.js (version 18.x or higher)
+- npm (version 9.x or higher)
 
 ## Getting Started
 
-Follow the instructions below to set up and run the Movie API and React App on your local machine.
+### Server
 
-### Prerequisites
+```bash
+cd server
+npm install
+npm run dev
+```
 
-- Node.js (version 14.x or higher)
-- npm (version 6.x or higher)
+The Express API will be running on `http://localhost:3000`.
 
-### Setting up the Movie API
+### Client
 
-1. Navigate to the Movie API directory:
+```bash
+cd client
+npm install
+npm run dev
+```
 
-``cd server``
+The Vite dev server will be running on `http://localhost:3001` with API requests proxied to the Express server.
 
-2. Install the required dependencies:
+## Production
 
-``npm install``
+Build the client and serve it from Express:
 
-3. Start the development server:
+```bash
+cd client && npm run build
+cd ../server && npm start
+```
 
-``npm run start``
-
-The Movie API will be running on `http://localhost:3000`.
-
-### Setting up the React App
-
-1. Navigate to the React App directory:
-
-``cd client``
-
-2. Install the required dependencies:
-
-``npm install``
-
-3. Start the development server:
-
-``npm run start``
-
-The React App will be running on `http://localhost:3000`.
+Visit `http://localhost:3000` — Express serves the built React app and the API.
 
 ## API Endpoints
 
-Refer to the [Movie API README](movie-api/README.md) for a detailed description of the available API endpoints.
+- `GET /movies` — Returns paginated movies (query params: `page`, `pageSize`)
+- `GET /movies/:id` — Returns a single movie by ID
 
-## React App
+## Testing
 
-The React App fetches and displays movie data from the Movie API. You can extend its functionality by adding more components, connecting to additional API endpoints, or adding more features like search, filtering, and user authentication.
+```bash
+# Server tests (Mocha + Chai + Supertest)
+cd server && npm test
+
+# Client tests (Vitest + React Testing Library)
+cd client && npm test
+```
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.

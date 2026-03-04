@@ -1,0 +1,52 @@
+.searchbar-container {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 2rem 0.5rem;
+}
+
+.searchbar-wrapper {
+  position: relative;
+  width: min(500px, 90%);
+}
+
+.searchbar-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  pointer-events: none;
+  transition: color 0.3s ease;
+}
+
+.searchbar {
+  width: 100%;
+  padding: 0.85rem 1rem 0.85rem 2.6rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-lg);
+  outline: none;
+  transition: all 0.35s ease;
+}
+
+.searchbar::placeholder {
+  color: var(--text-muted);
+  font-weight: 300;
+}
+
+.searchbar:focus {
+  border-color: var(--accent-border);
+  background: var(--bg-card-hover);
+  box-shadow:
+    0 0 0 3px var(--accent-dim),
+    0 4px 24px rgba(0, 0, 0, 0.3);
+}
+
+.searchbar:focus ~ .searchbar-icon {
+  color: var(--accent);
+}

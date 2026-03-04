@@ -5,16 +5,13 @@ yarn-debug.log
 yarn-error.log
 .env
 
-# React
-client/movie-browser/node_modules/
-client/movie-browser/.env
-client/movie-browser/.env.local
-client/movie-browser/.env.development.local
-client/movie-browser/.env.test.local
-client/movie-browser/.env.production.local
-client/movie-browser/npm-debug.log
-client/movie-browser/yarn-debug.log
-client/movie-browser/yarn-error.log
+# Client
+client/dist/
+client/.env
+client/.env.local
+client/.env.development.local
+client/.env.test.local
+client/.env.production.local
 
 # IDEs and text editors
 .vscode/

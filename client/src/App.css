@@ -1,0 +1,8 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% 0%, rgba(212, 165, 67, 0.06) 0%, transparent 60%),
+    var(--bg-deep);
+}
